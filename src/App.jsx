@@ -20,7 +20,7 @@ import {
 
 import AuthGate from "./components/AuthGate.jsx";
 import Login from "./pages/auth/Login.jsx";
-import Dashboard from "./pages/Dashboard.jsx";
+import Dashboard from "./pages/dashboard.jsx";
 import Products from "./pages/Products.jsx";
 import StockIn from "./pages/StockIn.jsx";
 import StockOut from "./pages/StockOut.jsx";
