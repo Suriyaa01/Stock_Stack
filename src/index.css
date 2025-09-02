@@ -1,0 +1,51 @@
+/* เบสิกให้ predictable */
+*,
+*::before,
+*::after { box-sizing: border-box }
+
+html, body, #root { height: 100% }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans Thai', 'Noto Sans', 'Microsoft Sans Serif', sans-serif;
+  background: #f5f7fb; /* ตรงกับ colorBgLayout */
+  color: #1f1f1f;
+}
+
+/* โลโก้ใน Sider */
+.logo {
+  color: #fff;
+  font-weight: 700;
+  padding: 16px 16px;
+  letter-spacing: .3px;
+}
+
+/* Header / Content ที่ดูสะอาด */
+.site-header {
+  background: transparent;
+  height: 64px;
+}
+
+.site-content {
+  margin: 16px;
+}
+
+/* กล่องเนื้อหาหลัก: ทำให้ดูเป็นการ์ด อยู่กึ่งกลางหน้ากว้างใหญ่ๆ */
+.app-container {
+  background: #fff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.04);
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* ตารางยาว ๆ ให้เลื่อนได้ (กันแตกเลย์เอาต์) */
+.ant-table {
+  overflow-x: auto;
+}
+
+/* รูปภาพในตาราง/การ์ดไม่ล้น */
+img { max-width: 100%; display:block }
+
+/* แก้ spacing บางจุดของ Card/Title ให้ดูสวยขึ้น */
+h1,h2,h3,h4,h5 { margin-top: 0 }

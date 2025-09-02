@@ -1,0 +1,52 @@
+erDiagram
+  profiles ||--o{ inventory_transactions : created_by
+  categories ||--o{ products : contains
+  warehouses ||--o{ inventory_transactions : holds
+  products ||--o{ batches : has
+  products ||--o{ inventory_transactions : moves
+  batches ||--o{ inventory_transactions : tagged_with
+
+  profiles {
+    uuid id PK
+    text full_name
+    text role
+  }
+  categories {
+    bigint id PK
+    text name
+  }
+  warehouses {
+    bigint id PK
+    text code
+    text name
+  }
+  products {
+    bigint id PK
+    text sku
+    text name
+    text unit
+    numeric price
+    text barcode
+    numeric min_qty
+    boolean is_active
+    bigint category_id FK
+  }
+  batches {
+    bigint id PK
+    bigint product_id FK
+    text lot_no
+    date expiry_date
+  }
+  inventory_transactions {
+    bigint id PK
+    bigint product_id FK
+    bigint warehouse_id FK
+    bigint batch_id FK
+    text txn_type
+    numeric qty
+    numeric unit_cost
+    text reason
+    text ref_no
+    timestamptz created_at
+    uuid created_by
+  }
